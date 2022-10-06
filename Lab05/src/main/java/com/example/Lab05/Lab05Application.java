@@ -8,17 +8,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.Lab05.ChungNhanDao;
-import com.example.Lab05.ChuyenBayDao;
-import com.example.Lab05.MayBayDao;
-import com.example.Lab05.NhanVienDao;
+import com.example.Lab05.reponsitory.ChungNhanDaoImp;
+import com.example.Lab05.reponsitory.ChuyenBayDaoImp;
+import com.example.Lab05.reponsitory.MayBayDaoImp;
+import com.example.Lab05.reponsitory.NhanVienDaoImp;
 
 @SpringBootApplication
 @org.springframework.transaction.annotation.Transactional
 public class Lab05Application {
 	@Bean
-	public CommandLineRunner run(ChuyenBayDao chuyenBayDao, MayBayDao mayBayDao, NhanVienDao nhanVienDao,
-			ChungNhanDao chungNhanDao) {
+	public CommandLineRunner run(ChuyenBayDaoImp chuyenBayDao, MayBayDaoImp mayBayDao, NhanVienDaoImp nhanVienDao,
+			ChungNhanDaoImp chungNhanDao) {
 		return (ArgsAnnotationPointcut -> {
 
 			System.out.println((chuyenBayDao.findAll()));
